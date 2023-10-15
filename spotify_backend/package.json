@@ -4,8 +4,8 @@
   "description": "This will contain the backend code for the spotify clone",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon index.js",
-    "build":"npm i"
+    "start": "nodemon index.js",
+    "build": "npm i"
   },
   "author": "Sachin Chavda",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.10.0",
+    "nodemon": "^3.0.1",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1"
   }
