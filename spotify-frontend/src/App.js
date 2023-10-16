@@ -33,14 +33,8 @@ function App() {
                         }}
                     >
                         <Routes>
-                            <Route
-                                path="/"
-                                element={<LoggedInHomeComponent />}
-                            />
-                            <Route
-                                path="/uploadSong"
-                                element={<UploadSong />}
-                            />
+                            <Route path="/" element={<LoggedInHomeComponent />} />
+                            <Route path="/uploadSong" element={<UploadSong />} />
                             <Route path="/myMusic" element={<MyMusic />} />
                             <Route path="/search" element={<SearchPage />} />
                            
