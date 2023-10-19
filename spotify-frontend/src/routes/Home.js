@@ -159,6 +159,7 @@ const PlaylistView = ({ titleText, cardsData }) => {
                 title={item.title}
                 description={item.description}
                 imgUrl={item.imgUrl}
+                key={item.title}
               />
             );
           })
