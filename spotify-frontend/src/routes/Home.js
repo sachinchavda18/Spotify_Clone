@@ -31,21 +31,24 @@ const Home = () => {
               displayText={"Home"}
               active
             />
-            <IconText
-              iconName={"material-symbols:search-rounded"}
-              displayText={"Search"}
-            />
-            <IconText iconName={"icomoon-free:books"} displayText={"Library"} />
+              <IconText
+                iconName={"material-symbols:search-rounded"}
+                displayText={"Search"}
+              />
+              <IconText
+                iconName={"icomoon-free:books"}
+                displayText={"Library"}
+              />
           </div>
           <div className="pt-5">
-            <IconText
-              iconName={"material-symbols:add-box"}
-              displayText={"Create Playlist"}
-            />
-            <IconText
-              iconName={"mdi:cards-heart"}
-              displayText={"Liked Songs"}
-            />
+              <IconText
+                iconName={"material-symbols:add-box"}
+                displayText={"Create Playlist"}
+              />
+              <IconText
+                iconName={"mdi:cards-heart"}
+                displayText={"Liked Songs"}
+              />
           </div>
         </div>
         <div className="px-5">
@@ -60,9 +63,9 @@ const Home = () => {
         <div className="navbar w-full h-1/10 bg-black bg-opacity-30 flex items-center justify-end">
           <div className="w-1/2 flex h-full">
             <div className="w-3/5 flex justify-around items-center">
-              <TextWithHover displayText={"Premium"} />
-              <TextWithHover displayText={"Support"} />
-              <TextWithHover displayText={"Download"} />
+                <TextWithHover displayText={"Premium"} />
+                <TextWithHover displayText={"Support"} />
+                <TextWithHover displayText={"Download"} />
               <div className="h-1/2 border-r border-white"></div>
             </div>
             <div className="w-2/5 flex justify-around h-full items-center">
@@ -79,7 +82,7 @@ const Home = () => {
           </div>
         </div>
         <div className="py-5 grid gap-2 grid-cols-4 overflow-auto">
-          {songData.map((item) => {
+          {songData?(songData.map((item) => {
             return (
               <Link to={"/login"}>
                 <SingleSongBox
@@ -89,45 +92,13 @@ const Home = () => {
                 />
               </Link>
             );
-          })}
+          })):(
+            <div className="text-white">No data found! </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
-
-// const PlaylistView = ({ titleText, cardsData }) => {
-//   return (
-//     <div className="text-white mt-8">
-//       <div className="text-2xl font-semibold mb-5">{titleText}</div>
-//       <div className="w-full flex justify-between space-x-4">
-//         {
-//           // cardsData will be an array
-//           cardsData.map((item) => {
-//             return (
-//               <Card
-//                 title={item.title}
-//                 description={item.description}
-//                 imgUrl={item.imgUrl}
-//               />
-//             );
-//           })
-//         }
-//       </div>
-//     </div>
-//   );
-// };
-
-// const Card = ({ title, description, imgUrl }) => {
-//   return (
-//     <div className="bg-black bg-opacity-40 w-1/5 p-4 rounded-lg">
-//       <div className="pb-4 pt-2">
-//         <img className="w-full rounded-md" src={imgUrl} alt="label" />
-//       </div>
-//       <div className="text-white font-semibold py-3">{title}</div>
-//       <div className="text-gray-500 text-sm">{description}</div>
-//     </div>
-//   );
-// };
 
 export default Home;
