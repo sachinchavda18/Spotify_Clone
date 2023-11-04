@@ -31,9 +31,11 @@ const LoginComponent = () => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col items-center bg-black overflow-auto">
+        <div className="w-full h-full flex flex-col items-center bg-black overflow-auto ">
             <div className="logo p-5 border-b border-solid border-gray-300 w-full flex justify-center">
+                <Link to={"/"}>
                 <Icon icon="logos:spotify" width="150" />
+                </Link>
             </div>
             <div className="inputRegion w-1/3 py-10 flex items-center justify-center flex-col text-gray-200 ">
                 {/*  I will have my 2 inputs(email and password) and I will have my sign up instead button*/}

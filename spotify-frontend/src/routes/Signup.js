@@ -42,7 +42,10 @@ const SignupComponent = () => {
   return (
     <div className="w-full h-full flex flex-col items-center bg-black overflow-auto text-gray-200">
       <div className="logo p-5 border-b border-solid border-gray-300 w-full flex justify-center">
+        <Link to={"/"}>
         <Icon icon="logos:spotify" width="150" />
+        </Link>
+
       </div>
       <div className="inputRegion w-1/3 py-10 flex items-center justify-center flex-col">
         {/*  I will have my 2 inputs(email and password) and I will have my sign up instead button*/}
@@ -76,7 +79,7 @@ const SignupComponent = () => {
           value={password}
           setValue={setPassword}
         />
-        <div className="w-full flex justify-between items-center space-x-8">
+        <div className="w-full flex justify-between items-center space-x-8 md:flex-col">
           <TextInput
             label="First Name"
             placeholder="Enter Your First Name"

@@ -39,6 +39,18 @@ export const makeAuthenticatedGETRequest = async (route) => {
     return formattedResponse;
 };
 
+export const makeLogoutGETRequest = async (route) => {
+    const response = await fetch(backendUrl + route, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    const formattedResponse = await response.json();
+    return formattedResponse;
+};
+
+
 const getToken = () => {
     const accessToken = document.cookie.replace(
         /(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/,

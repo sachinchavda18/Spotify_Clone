@@ -22,7 +22,7 @@ const Home = () => {
     <LoggedInContainer curActiveScreen="home">
       <div className="py-5 grid gap-2 grid-cols-4 overflow-auto">
         {songData.map((item) => {
-          return <SingleSongBox info={item} playSound={() => {}} />;
+          return <SingleSongBox info={item} playSound={() => {}} key={JSON.stringify(item)} />;
         })}
       </div>
     </LoggedInContainer>
