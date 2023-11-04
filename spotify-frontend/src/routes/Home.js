@@ -31,30 +31,30 @@ const Home = () => {
               displayText={"Home"}
               active
             />
-              <IconText
-                iconName={"material-symbols:search-rounded"}
-                displayText={"Search"}
-              />
-              <IconText
-                iconName={"icomoon-free:books"}
-                displayText={"Library"}
-              />
+            <IconText
+              iconName={"material-symbols:search-rounded"}
+              displayText={"Search"}
+            />
+            <IconText iconName={"icomoon-free:books"} displayText={"Library"} />
           </div>
           <div className="pt-5">
-              <IconText
-                iconName={"material-symbols:add-box"}
-                displayText={"Create Playlist"}
-              />
-              <IconText
-                iconName={"mdi:cards-heart"}
-                displayText={"Liked Songs"}
-              />
+            <IconText
+              iconName={"material-symbols:add-box"}
+              displayText={"Create Playlist"}
+            />
+            <IconText
+              iconName={"mdi:cards-heart"}
+              displayText={"Liked Songs"}
+            />
           </div>
         </div>
         <div className="px-5">
-          <div className="border border-gray-100 text-white w-2/5 flex px-2 py-1 rounded-full items-center justify-center hover:border-white cursor-pointer">
-            <Icon icon="carbon:earth-europe-africa" />
-            <div className="ml-2 text-sm font-semibold">English</div>
+          <div className="border border-gray-300 hover:border-white text-gray-300 hover:text-white  w-2/5 flex px-2 py-1 rounded-full items-center justify-center cursor-pointer">
+            <div className="w-full">
+              {/* <Icon icon="carbon:earth-europe-africa" className="fill-current" /> */}
+              <Icon icon="mingcute:earth-line" />
+            </div>
+            <div className="ml-1 mr-1 text-sm font-semibold">English</div>
           </div>
         </div>
       </div>
@@ -63,9 +63,9 @@ const Home = () => {
         <div className="navbar w-full h-1/10 bg-black bg-opacity-30 flex items-center justify-end">
           <div className="w-1/2 flex h-full">
             <div className="w-3/5 flex justify-around items-center">
-                <TextWithHover displayText={"Premium"} />
-                <TextWithHover displayText={"Support"} />
-                <TextWithHover displayText={"Download"} />
+              <TextWithHover displayText={"Premium"} />
+              <TextWithHover displayText={"Support"} />
+              <TextWithHover displayText={"Download"} />
               <div className="h-1/2 border-r border-white"></div>
             </div>
             <div className="w-2/5 flex justify-around h-full items-center">
@@ -82,17 +82,19 @@ const Home = () => {
           </div>
         </div>
         <div className="py-5 grid gap-2 grid-cols-4 overflow-auto">
-          {songData?(songData.map((item) => {
-            return (
-              <Link to={"/login"}>
-                <SingleSongBox
-                  info={item}
-                  key={JSON.stringify(item)}
-                  playSound={() => {}}
-                />
-              </Link>
-            );
-          })):(
+          {songData ? (
+            songData.map((item) => {
+              return (
+                <Link to={"/login"}>
+                  <SingleSongBox
+                    info={item}
+                    key={JSON.stringify(item)}
+                    playSound={() => {}}
+                  />
+                </Link>
+              );
+            })
+          ) : (
             <div className="text-white">No data found! </div>
           )}
         </div>
