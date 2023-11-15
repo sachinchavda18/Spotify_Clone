@@ -7,7 +7,7 @@ const CloudinaryUpload = ({setUrl, setName}) => {
             {
                 cloudName: "dbm00gxt1",
                 uploadPreset: cloudinary_upload_preset,
-                sources: ["local"],
+                sources: ["local","web"],
             },
             function (error, result) {
                 if (!error && result.event === "success") {
